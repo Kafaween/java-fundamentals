@@ -3,7 +3,7 @@ package inheritance;
 public class Review  {
     private String body;
     private String author;
-    protected int num_stars;
+    protected double num_stars;
 
     public Review(String body, String author, int num_stars) {
         this.body = body;

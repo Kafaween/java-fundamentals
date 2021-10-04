@@ -1,15 +1,14 @@
 package inheritance;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 public class Restaurant  {
     private String name;
-    private int rate=0;
+    private double rate=0;
     private String  price_category;
-    private List<Review> list= new ArrayList<>();
-    private int num_of_rating=0;
+    private List<Review> list_of_rates = new ArrayList<>();
+    private double num_of_rating=0;
 
     public Restaurant() {
     }
@@ -20,11 +19,16 @@ public class Restaurant  {
         this.price_category = price_category;
     }
 
-    public void addReview(Review review){
-        list.add(review);
-        num_of_rating++;
-        rate=(review.num_stars+rate)/num_of_rating;
-
+    public String addReview(Review review){
+        if (review.num_stars>5){
+            return("only review from 1 to 5");
+        }
+        else {
+            list_of_rates.add(review);
+            num_of_rating++;
+            rate = (review.num_stars + rate) / num_of_rating;
+            return "new rating have been added";
+        }
     }
 
     @Override
@@ -33,7 +37,7 @@ public class Restaurant  {
                 "name='" + name + '\'' +
                 ", rate=" + rate +
                 ", price_category='" + price_category + '\'' +
-                ", list=" + list +
+                ", list_of_reviews=" + list_of_rates +
                 '}';
     }
 }
