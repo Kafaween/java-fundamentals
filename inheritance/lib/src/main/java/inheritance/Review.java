@@ -1,9 +1,9 @@
 package inheritance;
 
-public class Review extends Restaurant {
+public class Review  {
     private String body;
     private String author;
-    private int num_stars;
+    protected int num_stars;
 
     public Review(String body, String author, int num_stars) {
         this.body = body;
