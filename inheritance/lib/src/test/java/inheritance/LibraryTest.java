@@ -7,8 +7,33 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
-    @Test void someLibraryMethodReturnsTrue() {
-        Library classUnderTest = new Library();
-        assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
+    @Test void test1() {
+        Restaurant res1= new Restaurant("haniny","$$");
+        assertEquals("Restaurant{name='haniny', rate=0.0, price_category='$$', list_of_reviews=[]}", res1.toString());
+    }
+    @Test void test2() {
+        Review rev1=new Review("its a goood res","kafaween",3);
+        assertEquals("Review{body='its a goood res', author='kafaween', num_stars=3.0}", rev1.toString());
+    }
+    @Test void test3() {
+        Review rev1=new Review("its a goood res","kafaween",3);
+        assertEquals("Review{body='its a goood res', author='kafaween', num_stars=3.0}", rev1.toString());
+    }
+    @Test void test4() {
+        Restaurant res1= new Restaurant("haniny","$$");
+        Review rev1=new Review("its a goood res","kafaween",3);
+        res1.addReview(rev1);
+
+        assertEquals("new rating have been added", res1.addReview(rev1));
+    }
+    @Test void test5() {
+        Restaurant res3= new Restaurant("mac","$$$");
+        Review review=new Review("nice","asd",0);
+        res3.addReview(review);
+        Review review2=new Review("nice","asdasdasd",3);
+        Review review3=new Review("nice","asdasdaaasd",3);
+        res3.addReview(review2);
+        res3.addReview(review3);
+        assertEquals("Restaurant{name='mac', rate=1.5, price_category='$$$', list_of_reviews=[Review{body='nice', author='asd', num_stars=0.0}, Review{body='nice', author='asdasdasd', num_stars=3.0}, Review{body='nice', author='asdasdaaasd', num_stars=3.0}]}", res3.toString());
     }
 }

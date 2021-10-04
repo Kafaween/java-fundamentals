@@ -1,0 +1,1 @@
+# i created to separte array and to associte thme i created a methode that takes as argumen an instance of review class and implemnted it.
