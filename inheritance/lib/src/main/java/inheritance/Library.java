@@ -5,30 +5,65 @@ package inheritance;
 
 public class Library {
     public static void main(String[] args) {
-        System.out.println("hi");
-        Restaurant res1= new Restaurant("haniny","$$");
-        System.out.println(res1.toString());
-        Review rev1=new Review("its a goood res","kafaween",3);
-        res1.addReview(rev1);
-            Review rev2=new Review("its a goood res","kafa",2);
-        res1.addReview(rev2);
-        System.out.println(res1.toString());
-        System.out.println("------------------------------------------------------");
-        Restaurant res2= new Restaurant("burgarize","$$");
-        Review rev3=new Review("its a goood res","kafawee",5);
-        res2.addReview(rev3);
-        Review rev4=new Review("its a goood res","kaf",5);
-        res2.addReview(rev4);
-        System.out.println(res2.toString());
-        System.out.println("------------------------------------------------------");
-        Restaurant res3= new Restaurant("mac","$$$");
-        Review review=new Review("nice","asd",0);
-        res3.addReview(review);
-        Review review2=new Review("nice","asdasdasd",3);
-        Review review3=new Review("nice","asdasdaaasd",3);
-        res3.addReview(review2);
-        res3.addReview(review3);
-        System.out.println(res3.toString());
-        System.out.println("------------------------------------------------------");
+//        System.out.println("hi");
+//        Restaurant res1= new Restaurant("haniny","$$");
+//        System.out.println(res1.toString());
+//        Review rev1=new Review("its a goood res","kafaween",3);
+//        res1.addReview(rev1);
+//            Review rev2=new Review("its a goood res","kafa",2);
+//        res1.addReview(rev2);
+//        System.out.println(res1.toString());
+//        System.out.println("------------------------------------------------------");
+//        Restaurant res2= new Restaurant("burgarize","$$");
+//        Review rev3=new Review("its a goood res","kafawee",5);
+//        res2.addReview(rev3);
+//        Review rev4=new Review("its a goood res","kaf",5);
+//        res2.addReview(rev4);
+//        System.out.println(res2.toString());
+//        System.out.println("------------------------------------------------------");
+//        Restaurant res3= new Restaurant("mac","$$$");
+//        Review review=new Review("nice","asd",0);
+//        res3.addReview(review);
+//        Review review2=new Review("nice","asdasdasd",3);
+//        Review review3=new Review("nice","asdasdaaasd",3);
+//        res3.addReview(review2);
+//        res3.addReview(review3);
+//        System.out.println(res3.toString());
+//        System.out.println("------------------------------------------------------");
+
+        System.out.println("test for shop");
+    Shop shop1=new Shop("hamodeh","nice shop","$");
+        System.out.println(shop1.toString());
+        System.out.println("------------------------------------------------");
+        System.out.println("Test for same review for both shop and resturent");
+        Review review1=new Review("best place","kafaween",5);
+        Restaurant restaurant1=new Restaurant("haniny","$");
+        shop1.addReview(review1);
+        restaurant1.addReview(review1);
+        shop1.addReview(review1);
+        System.out.println(restaurant1.toString());
+        System.out.println(shop1.toString());
+        System.out.println("-------------------------------------------------------");
+        System.out.println("test for theatre functionality");
+        Theatre theatre1=new Theatre("shams");
+        System.out.println(theatre1.addMovies("fight club"));
+        System.out.println(theatre1.addMovies("bird man"));
+        System.out.println(theatre1.addMovies("usual suspect"));
+        System.out.println(theatre1.removeMovies("bird man"));
+
+        System.out.println(theatre1.toString());
+        System.out.println("---------------------------------------------------------");
+        System.out.println("test for theatre rate based on movie or not");
+        Review review_theatre=new Review("good theatre","abed",4);
+        Review review_based_movie=new Review("nice movie nice service","kafaween",5);
+        theatre1.addReview(review_theatre);
+
+        System.out.println("based on theatre review");
+        System.out.println(theatre1.toString());
+        System.out.println("based on movie review");
+        theatre1.addReviewmovie(review_based_movie,"fight club");
+        System.out.println(theatre1.toString());
+
+
     }
 }

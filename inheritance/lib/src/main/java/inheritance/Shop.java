@@ -3,20 +3,19 @@ package inheritance;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Restaurant implements reviewable {
+public class Shop implements reviewable{
     private String name;
-    private double rate=0;
-    private String  price_category;
+    private String desc;
+    private String num_dol;
     private List<Review> list_of_rates = new ArrayList<>();
+    private double rate=0;
     private double num_of_rating=0;
 
-
-    public Restaurant(String name, String price_category) {
+    public Shop(String name, String desc, String num_dol) {
         this.name = name;
-
-        this.price_category = price_category;
+        this.desc = desc;
+        this.num_dol = num_dol;
     }
-
 
     @Override
     public String addReview(Review review){
@@ -33,10 +32,10 @@ public class Restaurant implements reviewable {
 
     @Override
     public String toString() {
-        return "Restaurant{" +
+        return "Shop{" +
                 "name='" + name + '\'' +
                 ", rate=" + rate +
-                ", price_category='" + price_category + '\'' +
+                ", price_category='" + num_dol + '\'' +
                 ", list_of_reviews=" + list_of_rates +
                 '}';
     }
