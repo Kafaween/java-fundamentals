@@ -1,6 +1,6 @@
 package inheritance;
 
-public class Review  {
+public  class Review  {
     private String body;
     private String author;
     protected double num_stars;
@@ -10,6 +10,7 @@ public class Review  {
         this.author = author;
         this.num_stars = num_stars;
     }
+
 
     @Override
     public String toString() {
