@@ -1,7 +1,7 @@
 # lab 6
 # I created 2 classes review and restaurant  to associate theme I created a methode called add review that takes as argument an instance of review class and implemented it.
 
-#lab 7
+# lab 7
 
 # created another class called shop has the same logic as resturnet and then created an interface called reviewable that has methode addReview and implement it for shop and restrained so they both can be reviewed based on the methode addReview that takes review instance as argument
 
